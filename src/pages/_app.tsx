@@ -1,6 +1,8 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app';
 import localFont from "next/font/local";
+import { AppProvider } from '@/components/Context/AppContext';
+import NavBar from '@/components/NavBar/Navbar';
 
 const gilroy = localFont({
   src:[
@@ -23,11 +25,10 @@ const gilroy = localFont({
 export default function App({ Component, pageProps }: AppProps) {
   return (
   <main className={`${gilroy.variable} font-sans`}>
-  <Component {...pageProps} />
+    <AppProvider>
+      <NavBar/>
+     <Component {...pageProps} />
+    </AppProvider>
   </main>
   )
 }
-
-{/* <main className={`${nunito.variable} ${publicSans.variable} ${inter.variable} ${nunitoSans.variable}  font-sans`}>
-<Component {...pageProps} />
-</main> */}
