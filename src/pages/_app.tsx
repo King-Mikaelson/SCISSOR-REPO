@@ -2,7 +2,7 @@ import '@/styles/globals.css'
 import type { AppProps } from 'next/app';
 import localFont from "next/font/local";
 import { AppProvider } from '@/components/Context/AppContext';
-import NavBar from '@/components/NavBar/Navbar';
+import Footer from '@/components/footer';
 
 const gilroy = localFont({
   src:[
@@ -26,8 +26,8 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
   <main className={`${gilroy.variable} font-sans`}>
     <AppProvider>
-      <NavBar/>
      <Component {...pageProps} />
+     <Footer/>
     </AppProvider>
   </main>
   )

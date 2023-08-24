@@ -10,8 +10,7 @@ const Hero = (props: Props) => {
     <main className={`flex flex-col px-6 lg:px-16 xl:px-36 pt-40 relative`}>
       <div>
         <div className="relative">
-          <h1 className="font-sans text-[#141414] font-bold lg:text-5xl text-2xl lg:leading-[6rem] text-center mb-0 pb-0 md:w-[35ch] md:my-0 md:mx-auto">
-            {" "}
+          <h1 className="font-sans text-[#141414] font-bold lg:text-5xl text-2xl lg:leading-[6rem] text-center mb-0 pb-0 md:w-[35ch] lg:w-auto xl:w-[35ch]  md:my-0 md:mx-auto">
             Optimize Your Online Experience with Our Advanced{" "}
             <span className="text-[#005AE2]">URL Shortening</span> Solution
           </h1>
@@ -53,7 +52,7 @@ const Hero = (props: Props) => {
         </div>
       </div>
 
-      <div className="flex justify-center  relative">
+      <div className="flex justify-center relative mt-11">
         <div className="z-0 -mt-4">
           <Image
             src="/ovalBg.svg"

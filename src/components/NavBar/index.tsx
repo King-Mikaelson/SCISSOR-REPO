@@ -83,7 +83,7 @@ function NavBar() {
           className="md:hidden block h-6 w-6 text-[#141414]"
           aria-hidden="true"
         />
-        <div className="hidden md:flex items-center justify-between  lg:gap-10  md:static w-auto  absolute top-0 right-0 text-white">
+        <div className="hidden md:flex items-center justify-between  md:gap-10  md:static w-auto  absolute top-0 right-0 text-white">
             <div>
               <Link
                 className=
@@ -126,7 +126,7 @@ function NavBar() {
         </div>
 
 
-        <div className="hidden md:flex md:items-center md:justify-center md:static md:w-auto  absolute top-0 right-0 text-white w-full">
+        <div className="hidden lg:flex md:items-center md:justify-center md:static md:w-auto  absolute top-0 right-0 text-white w-full">
 
             <div className="md:ml-8 text-2xl md:my-0 my-7">
               <Link
