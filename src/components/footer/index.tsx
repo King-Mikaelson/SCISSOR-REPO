@@ -7,7 +7,7 @@ import { BsInstagram } from "react-icons/bs";
 
 function Footer() {
   return (
-      <main className="mt-10 mb-auto text-black bg-[#FFF] pt-10 lg:pt-20  lg:px-12 xl:px-48 px-4 mx-0 w-full flex flex-col relative">
+      <main className="mt-10 mb-auto text-black bg-[#FFF] pt-10   lg:px-12 xl:px-48 px-4 mx-0 w-full flex flex-col relative">
 
         <div className="grid grid-cols-1 lg:grid-cols-5 md:grid-cols-4  justify-evenly gap-x-20 ">
           <div className="self-start w-full order-8 md:order-1">

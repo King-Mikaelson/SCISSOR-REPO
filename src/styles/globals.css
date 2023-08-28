@@ -23,3 +23,9 @@ body,html{
   left: 51%;
   transform: translate(-50%,-50%);
 }
+
+.box{
+border-radius: 0.75rem;
+background:  linear-gradient(180deg, #1E3448 99.99%, rgba(30, 52, 72, 0.00) 100%);
+box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
+}

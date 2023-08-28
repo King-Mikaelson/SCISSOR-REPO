@@ -7,6 +7,9 @@ import Hero from '@/components/hero'
 import {db, getDocs,colRef,auth, addDoc, doc, deleteDoc, onSnapshot} from "../components/firebase/firebaseConfig"
 import { useEffect } from 'react'
 import NavBar from '@/components/NavBar'
+import Faq from '@/components/FaqSection'
+import Features from '@/components/Features'
+import Pricing from '@/components/Pricing'
 
 type Movies = {
   title:string,
@@ -53,10 +56,13 @@ export default function Home() {
 // },[]) 
   return (
     <main
-    className='bg-[#fcfbfa] min-h-screen w-full'
+    className='min-h-screen w-full'
     >
       <NavBar/>
       <Hero/>
+      <Features/>
+      <Pricing/>
+      <Faq/>
     </main>
   )
 }
