@@ -8,6 +8,7 @@
       {
         "aria-command-name": "off"
       }
-    ]
+    ],
+    "typescript-config/is-valid": "off"
   }
 }
