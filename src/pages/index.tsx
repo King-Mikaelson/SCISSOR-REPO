@@ -10,6 +10,7 @@ import NavBar from '@/components/NavBar'
 import Faq from '@/components/FaqSection'
 import Features from '@/components/Features'
 import Pricing from '@/components/Pricing'
+import LinkShortener from '@/components/LinkShortener'
 
 type Movies = {
   title:string,
@@ -62,6 +63,7 @@ export default function Home() {
       <Hero/>
       <Features/>
       <Pricing/>
+      <LinkShortener/>
       <Faq/>
     </main>
   )

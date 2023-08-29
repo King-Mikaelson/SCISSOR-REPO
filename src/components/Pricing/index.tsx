@@ -7,7 +7,7 @@ type Props = {}
 function Pricing({}: Props) {
   return (
     <main className="bg-white h-fit flex flex-col items-center justify-center lg:pt-48 pt-24 relative w-full px-6 lg:px-0">
-    <div className="flex justify-center items-center relative md:mb-8 gap-4 flex-col">
+    <div className="flex justify-center items-center relative md:mb-20 gap-4 flex-col">
       <h4 className="font-sans font-bold md:text-[2.5rem] text-2xl text-center  text-[#141414]">
       A <span className="text-[#005AE2]">price perfect</span> for your needs.
       </h4>
@@ -119,7 +119,7 @@ function Pricing({}: Props) {
     </div>
     </div>
 
-    <div className="flex justify-center items-center my-16 gap-4 flex-col md:flex-row">
+    <div className="flex justify-center items-center my-16 mb-24 gap-4 flex-col md:flex-row">
           <div className="border solid border-[#0065FE] rounded-full px-7 py-[0.65rem]">
             <Link
               className="text-[#0065FE] text-base font-sans font-semibold"

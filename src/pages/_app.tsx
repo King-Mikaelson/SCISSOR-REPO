@@ -1,8 +1,10 @@
-import '@/styles/globals.css'
+import '@/styles/globals.scss'
 import type { AppProps } from 'next/app';
 import localFont from "next/font/local";
 import { AppProvider } from '@/components/Context/AppContext';
 import Footer from '@/components/footer';
+import React from 'react';
+
 
 const gilroy = localFont({
   src:[
@@ -23,6 +25,7 @@ const gilroy = localFont({
 })
 
 export default function App({ Component, pageProps }: AppProps) {
+  if (!process.browser) React.useLayoutEffect = React.useEffect;
   return (
   <main className={`${gilroy.variable} font-sans`}>
     <AppProvider>

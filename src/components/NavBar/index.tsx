@@ -131,7 +131,7 @@ function NavBar() {
             <div className="md:ml-8 text-2xl md:my-0 my-7">
               <Link
                 className= "text-blue-600 text-base font-sans font-semibold hover:underline hover:underline-offset-2"
-                href={"/"}
+                href={"/login"}
               >
                 Log In
               </Link>
@@ -140,7 +140,7 @@ function NavBar() {
             <div className="md:ml-8 text-2xl bg-blue-600 py-2 px-6 xl:h-11 xl:w-32 xl:py-3 xl:px-6 flex justify-center items-center rounded-full">
               <Link
                 className= "text-[#FFF] text-base font-sans font-semibold hover:underline hover:underline-offset-2"
-                href={"/"}
+                href={"/signup"}
               >
                 Try for free
               </Link>
