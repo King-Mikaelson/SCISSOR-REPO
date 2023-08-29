@@ -28,6 +28,7 @@ const db = getFirestore(app);
 
 // Initialize Collections
 const colRef = collection(db, "movies");
+const userRef = collection(db, "users");
 
 // Get all documents from the collection - "movies"
 // getDocs(colRef)
@@ -49,4 +50,4 @@ const colRef = collection(db, "movies");
 //     console.log("Document written with ID: ", docRef.id);
 // })
 
-export { app, auth, db, colRef, getDocs, addDoc, doc, deleteDoc, onSnapshot };
+export { app, auth, db, colRef, userRef, getDocs, addDoc, doc, deleteDoc, onSnapshot };

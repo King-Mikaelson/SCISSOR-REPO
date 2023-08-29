@@ -1,11 +1,30 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import AppContext from "../../components/Context/AppContext";
+import { useContext} from "react";
+import useTogglePassword from "@/hooks/useTogglePassword";
 
 type Props = {};
 
 function SignUp({}: Props) {
+  const {createUser,signInUser,user} = useContext(AppContext);
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [InputType, ToggleIcon] = useTogglePassword();
+  const [InputType1, ToggleIcon1] = useTogglePassword();
+
+  
+
+
+  const handleClick = (e:React.MouseEvent<HTMLFormElement, MouseEvent>) => {
+    e.preventDefault();
+    console.log("mike")
+  }
   return (
     <main
       className={`flex flex-col px-6 lg:px-16 xl:px-36 pt-10 pb-10 relative  justify-center items-center`}
@@ -44,12 +63,14 @@ function SignUp({}: Props) {
           <div className="flex-grow border-t border-[#A0B1C0]"></div>
         </div>
       </div>
-      <form className="flex flex-col lg:w-[40%] w-full">
+      <form onClick={(e) => handleClick(e)} className="flex flex-col lg:w-[40%] w-full">
         <div className="w-full flex flex-col gap-6">
           <div>
             <input
               type="text"
               placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               className="w-full border-solid border-[#005AE2] border-2 rounded-xl py-3 px-4 font-sans font-medium text-base placeholder:text-[#A0B1C0] placeholder-font-medium placeholder:font-sans placeholder:text-base "
             />
           </div>
@@ -58,24 +79,34 @@ function SignUp({}: Props) {
             <input
               type="text"
               placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full border-solid border-[#005AE2] border-2 rounded-xl py-3 px-4 font-sans font-medium text-base placeholder:text-[#A0B1C0] placeholder:font-medium placeholder:font-sans placeholder:text-base"
             />
           </div>
 
-          <div>
-            <input
-              type="text"
-              placeholder="Password"
-              className="w-full border-solid border-[#005AE2] border-2 rounded-xl py-3 px-4 font-sans font-medium text-base placeholder:text-[#A0B1C0]placeholder:font-medium placeholder:font-sans placeholder:text-base"
-            />
-          </div>
+          <div className="w-full flex justify-between relative">
+                  <input
+                    type={String(InputType)}
+                    placeholder="Enter password"
+                    value={password}
+                    className="w-full border-solid border-[#005AE2] border-2 rounded-xl py-3 px-4 font-sans font-medium text-base placeholder:text-[#A0B1C0]placeholder:font-medium placeholder:font-sans placeholder:text-base flex justify-between"
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                  <div className="absolute top-4 right-4">{ToggleIcon}</div>
+              </div>
 
-          <div>
-            <input
-              type="text"
-              placeholder="Retype Password"
-              className="w-full border-solid border-[#005AE2] border-2 rounded-xl py-3 px-4 font-sans font-medium text-base placeholder:text-[#A0B1C0] placeholder:font-medium placeholder:font-sans placeholder:text-base"
-            />
+          <div className="flex flex-col w-full">
+          <div className="w-full flex justify-between relative">
+                  <input
+                    type={String(InputType1)}
+                    placeholder="Retype Password"
+                    value={confirmPassword}
+                    className="w-full border-solid border-[#005AE2] border-2 rounded-xl py-3 px-4 font-sans font-medium text-base placeholder:text-[#A0B1C0]placeholder:font-medium placeholder:font-sans placeholder:text-base flex justify-between"
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                  />
+                  <div className="absolute top-4 right-4">{ToggleIcon1}</div>
+              </div>
 
             <p className="font-sans font-medium text-xs py-3 text-[#A0B1C0]">
               6 or more characters, one number, one uppercase & one lower case.
