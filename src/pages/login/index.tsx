@@ -60,7 +60,9 @@ function Login({}: Props) {
               placeholder="Password"
               className="w-full border-solid border-[#005AE2] border-2 rounded-xl py-3 px-4 font-sans font-medium text-base placeholder:text-[#A0B1C0]placeholder:font-medium placeholder:font-sans placeholder:text-base"
             />
-            <p className="font-sans font-medium text-sm text-right py-3 text-[#4991FF]">Forgot your password?.</p>
+            <p className="font-sans font-medium text-sm text-right py-3 text-[#4991FF]">
+              Forgot your password?.
+            </p>
           </div>
         </div>
 
@@ -69,8 +71,10 @@ function Login({}: Props) {
         </button>
 
         <p className="text-[#5C6F7F] py-6 pb-3 text-center font-sans font-medium text-sm ">
-        Don’t have an account?  {" "}
-          <Link href={"/signup"} className="text-[#005AE2]">Sign up</Link>
+          Don’t have an account?{" "}
+          <Link href={"/signup"} className="text-[#005AE2]">
+            Sign up
+          </Link>
         </p>
 
         <p className="text-[#A0B1C0]  font-sans font-medium text-xs  text-center ">
