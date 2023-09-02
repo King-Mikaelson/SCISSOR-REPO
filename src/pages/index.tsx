@@ -11,6 +11,8 @@ import Faq from '@/components/FaqSection'
 import Features from '@/components/Features'
 import Pricing from '@/components/Pricing'
 import LinkShortener from '@/components/LinkShortener'
+import { onAuthStateChanged } from 'firebase/auth'
+import { useRouter } from 'next/navigation'
 
 type Movies = {
   title:string,
@@ -20,41 +22,14 @@ type Movies = {
 
 
 export default function Home() {
-// useEffect(() => {
-//   // getDocs(colRef)
-//   // .then((snapshot) => {
-//   //   let movies:any = []
-//   //   snapshot.forEach((doc) =>{
-//   //     movies.push({...doc.data(), id:doc.id})
-//   //   })
-//   //   console.log(movies)
-//   // })
-//   // .catch((err) => console.log(err))
 
-//   // Get all documents from the collection in real time - "movies"
-// onSnapshot(colRef, (snapshot) => {
-//   let movies:any = []
-// snapshot.forEach((doc) =>{
-//   movies.push({...doc.data(), id:doc.id})
-// })
-// console.log(movies)
-// })
-  
-  
-//   addDoc(colRef, {
-//       title: "The Alchemist",
-//       director: "John Doe",
-//   }).then(docRef => {
-//       console.log("Document written with ID: ", docRef.id);
-//   })
+  const {user,setUser } = useContext(AppContext);
+  const router = useRouter()
 
-//   let deleteRef = doc(db, "movies", 'dwRUtkJyumZsrkv1O5sB')
 
-//   deleteDoc(deleteRef)
-//   .then((doc) => {
-//     console.log("Document successfully deleted!", doc);
-//   })
-// },[]) 
+
+
+
   return (
     <main
     className='min-h-screen w-full'

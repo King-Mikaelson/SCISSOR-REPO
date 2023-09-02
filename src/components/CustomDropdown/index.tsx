@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { AiOutlineDown } from "react-icons/ai";
 import { FiLock } from "react-icons/fi";
 import { useClickAway } from "@uidotdev/usehooks";
+import {useOnClickOutside} from "usehooks-ts"
 
 type Item = {
   id: number;
@@ -20,9 +21,12 @@ function CustomDropDown({ title, items, multiselect }: Props) {
     setOpen(value);
   };
 
-  const ref = useClickAway(() => {
+  const ref = useRef(null);
+  const handleClickOutside = (() => {
     setOpen(false);
   });
+
+  useOnClickOutside(ref, handleClickOutside)
 
   const handleOnClick = (item: Item) => {
     if (!selection?.some((current) => current?.id === item.id)) {

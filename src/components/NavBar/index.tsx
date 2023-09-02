@@ -12,11 +12,15 @@ import { useContext } from 'react'
 import AppContext from "../Context/AppContext";
 import React, { useState } from "react";
 import DropDown from "../dropDown/DropDown";
+import { signOut } from "firebase/auth";
+import {auth} from "../../components/firebase/firebaseConfig";
+import {toast} from "react-toastify"
+
 
 
 function NavBar() {
 
-    const {open,setOpen} = useContext(AppContext)
+    const {open,setOpen, user, setUser} = useContext(AppContext)
 
   const navigation = [
     { name: "MyURLs", href: "#home", current: true, path:"/" },
@@ -28,6 +32,17 @@ function NavBar() {
 
   const pathName = usePathname();
   // console.log(pathName)
+
+  const handleLogout = () => {               
+    signOut(auth).then(() => {
+    // Sign-out successful.
+        console.log("Signed out successfully")
+        toast.success("Signed out successfully")
+        setUser({})
+    }).catch((error) => {
+    // An error happened.
+    });
+}
   return (
     <nav className=" w-full fixed top-0 left-0 z-50">
         <div
@@ -128,14 +143,20 @@ function NavBar() {
 
         <div className="hidden lg:flex md:items-center md:justify-center md:static md:w-auto  absolute top-0 right-0 text-white w-full">
 
-            <div className="md:ml-8 text-2xl md:my-0 my-7">
+            {Object.keys(user).length == 0 ? <div className="md:ml-8 text-2xl md:my-0 my-7">
               <Link
                 className= "text-blue-600 text-base font-sans font-semibold hover:underline hover:underline-offset-2"
                 href={"/login"}
               >
                 Log In
               </Link>
-            </div>
+            </div> : 
+            <button
+            onClick={handleLogout}
+            className= "text-blue-600 text-base font-sans font-semibold hover:underline hover:underline-offset-2"
+          >
+            Log Out
+          </button>}
 
             <div className="md:ml-8 text-2xl bg-blue-600 py-2 px-6 xl:h-11 xl:w-32 xl:py-3 xl:px-6 flex justify-center items-center rounded-full">
               <Link
